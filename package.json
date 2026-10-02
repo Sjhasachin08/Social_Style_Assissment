@@ -1,0 +1,25 @@
+{
+  "name": "social-style-assessment",
+  "version": "1.0.0",
+  "description": "A local, professional Social Style Self-Assessment application (Assertiveness / Responsiveness) with SQLite storage and PDF report generation.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "pdfkit": "^0.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

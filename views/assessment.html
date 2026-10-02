@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assessment — Social Style Assessment</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="brand"><span class="brand-mark"></span> Social Style Assessment</div>
+      <div class="nav-links" id="nav-links">
+      </div>
+    </div>
+  </nav>
+
+  <main class="assessment-wrap">
+    <div class="progress-header">
+      <span id="progress-label">Question 1 of 30</span>
+      <span id="progress-percent">0%</span>
+    </div>
+    <div class="progress-bar-track">
+      <div class="progress-bar-fill" id="progress-fill"></div>
+    </div>
+
+    <div class="question-card" id="question-card">
+      <div class="loading">Loading questionnaire…</div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn btn-secondary" id="prev-btn" disabled>Previous</button>
+      <button class="btn btn-primary" id="next-btn" disabled>Next</button>
+    </div>
+
+    <p class="hint-banner">Tip: use number keys 1–4 to answer, and arrow keys to navigate.</p>
+  </main>
+
+  <div class="modal-overlay" id="email-modal">
+    <form class="modal-card" id="email-modal-form">
+      <h3>Almost done!</h3>
+      <p>Enter your name and Gmail to see your report.</p>
+      <label class="modal-field">
+        <span>Name</span>
+        <input type="text" id="participant-name-input" placeholder="Your full name" autocomplete="name" required />
+      </label>
+      <label class="modal-field">
+        <span>Gmail / Email</span>
+        <input type="email" id="participant-email-input" placeholder="you@gmail.com" autocomplete="email" required />
+      </label>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="email-modal-cancel">Back</button>
+        <button type="submit" class="btn btn-primary" id="email-modal-submit">See My Result</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/assessment.js"></script>
+</body>
+</html>

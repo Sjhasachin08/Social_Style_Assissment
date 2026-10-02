@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Result — Social Style Assessment</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="brand"><span class="brand-mark"></span> Social Style Assessment</div>
+      <div class="nav-links" id="nav-links">
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" id="result-root">
+    <div class="loading">Loading your result…</div>
+  </main>
+
+  <template id="result-template">
+    <div class="result-header">
+      <span class="badge">ASSESSMENT COMPLETE</span>
+      <h1>Congratulations, your assessment has been completed.</h1>
+      <p>Participant: <strong data-field="participant-name"></strong></p>
+    </div>
+
+    <div class="scores-grid">
+      <div class="score-card">
+        <h4>Assertiveness</h4>
+        <div class="big"><span data-field="assertiveness-total"></span> / 60</div>
+        <div class="sub">Average score: <span data-field="assertiveness-average"></span></div>
+      </div>
+      <div class="score-card">
+        <h4>Responsiveness</h4>
+        <div class="big"><span data-field="responsiveness-total"></span> / 60</div>
+        <div class="sub">Average score: <span data-field="responsiveness-average"></span></div>
+      </div>
+    </div>
+
+    <div class="style-banner">
+      <div class="label">Your Social Style</div>
+      <div class="name" data-field="social-style"></div>
+    </div>
+
+    <div class="matrix-wrap">
+      <h3 class="matrix-title">Social Style Matrix</h3>
+      <p class="matrix-axis-label top-label">Low Responsive &nbsp;"Controlled"</p>
+      <div class="matrix-outer">
+        <div class="matrix-side-label left-label">Low Assertive<em>"Asking"</em></div>
+        <div class="matrix-grid" id="matrix-grid">
+          <div class="matrix-cell analytical">
+            <span class="cell-name">ANALYTICAL</span>
+            <span class="cell-sub">(Thinking)</span>
+          </div>
+          <div class="matrix-cell driver">
+            <span class="cell-name">DRIVER</span>
+            <span class="cell-sub">(Sensor)</span>
+          </div>
+          <div class="matrix-cell amiable">
+            <span class="cell-name">AMIABLE</span>
+            <span class="cell-sub">(Feeling)</span>
+          </div>
+          <div class="matrix-cell expressive">
+            <span class="cell-name">EXPRESSIVE</span>
+            <span class="cell-sub">(Intuitive)</span>
+          </div>
+          <div class="matrix-point" id="matrix-point" title="Your Score"></div>
+        </div>
+        <div class="matrix-side-label right-label">High Assertive<em>"Telling"</em></div>
+      </div>
+      <p class="matrix-axis-label bottom-label">High Responsive &nbsp;"Emotional"</p>
+
+      <div class="matrix-legend">
+        <div><strong>Assertiveness</strong> (Dominance) — the degree to which a person attempts to control situations or the thoughts and actions of others.</div>
+        <div><strong>Responsiveness</strong> (Sociability) — the readiness with which a person outwardly displays emotions or feelings and develops relationships.</div>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <h3>Understanding Your Scores</h3>
+      <div class="score-explain">
+        <h4>Assertiveness</h4>
+        <p>Assertiveness shows how directly and quickly you express your opinions and make decisions. A higher score means you speak up, decide fast, and like to take charge. A lower score means you prefer to listen first, think things through, and let others lead.</p>
+        <p class="text-hi">Assertiveness (मुखरता) यह दिखाती है कि आप कितनी सीधी और तेज़ी से अपनी राय ज़ाहिर करते हैं और फैसले लेते हैं। ज्यादा स्कोर का मतलब है कि आप खुलकर बोलते हैं, जल्दी फैसला लेते हैं और कमान संभालना पसंद करते हैं। कम स्कोर का मतलब है कि आप पहले सुनना, सोच-समझकर काम करना और दूसरों को आगे बढ़ने देना पसंद करते हैं।</p>
+      </div>
+      <div class="score-explain">
+        <h4>Responsiveness</h4>
+        <p>Responsiveness shows how openly you express your feelings, and whether you focus more on people or on tasks. A higher score means you are warm, expressive, and people-focused. A lower score means you are more reserved, controlled, and task-focused.</p>
+        <p class="text-hi">Responsiveness (भाव-प्रवणता) यह दिखाती है कि आप अपनी भावनाएं कितनी खुलकर ज़ाहिर करते हैं, और आप लोगों पर ज्यादा ध्यान देते हैं या काम पर। ज्यादा स्कोर का मतलब है कि आप गर्मजोशी भरे, अभिव्यक्तिपूर्ण और लोगों पर केंद्रित हैं। कम स्कोर का मतलब है कि आप ज्यादा संयमित, नियंत्रित और काम पर केंद्रित हैं।</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <h3>The Four Social Styles</h3>
+      <p class="section-intro">Everyone lands somewhere on these two scales, which gives four broad styles. Your style is highlighted below.</p>
+      <div class="style-ref-grid" id="style-ref-grid">
+        <div class="style-ref-card" data-style-name="Driver">
+          <div class="style-ref-name">Driver</div>
+          <p>High Assertiveness + Low Responsiveness. Direct, fast, and focused on results.</p>
+          <p class="text-hi">ज्यादा Assertiveness + कम Responsiveness। सीधे, तेज़ और परिणामों पर केंद्रित।</p>
+        </div>
+        <div class="style-ref-card" data-style-name="Expressive">
+          <div class="style-ref-name">Expressive</div>
+          <p>High Assertiveness + High Responsiveness. Energetic, sociable, and idea-driven.</p>
+          <p class="text-hi">ज्यादा Assertiveness + ज्यादा Responsiveness। ऊर्जावान, मिलनसार और विचारों से प्रेरित।</p>
+        </div>
+        <div class="style-ref-card" data-style-name="Amiable">
+          <div class="style-ref-name">Amiable</div>
+          <p>Low Assertiveness + High Responsiveness. Warm, supportive, and relationship-focused.</p>
+          <p class="text-hi">कम Assertiveness + ज्यादा Responsiveness। गर्मजोशी भरे, सहयोगी और रिश्तों पर केंद्रित।</p>
+        </div>
+        <div class="style-ref-card" data-style-name="Analytical">
+          <div class="style-ref-name">Analytical</div>
+          <p>Low Assertiveness + Low Responsiveness. Careful, logical, and detail-focused.</p>
+          <p class="text-hi">कम Assertiveness + कम Responsiveness। सावधान, तार्किक और बारीकियों पर ध्यान देने वाले।</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <h3>Personality Overview</h3>
+      <p data-field="description"></p>
+      <p class="text-hi" data-field="description-hi"></p>
+    </div>
+
+    <div class="analysis-section strengths-section">
+      <h3>Your Strengths — आप किन चीज़ों में अच्छे हैं</h3>
+      <ul data-field="strengths"></ul>
+      <ul class="text-hi" data-field="strengths-hi"></ul>
+    </div>
+
+    <div class="analysis-section improve-section">
+      <h3>Areas to Improve — आपको क्या सुधारना चाहिए</h3>
+      <ul data-field="improvement-suggestions"></ul>
+      <ul class="text-hi" data-field="improvement-suggestions-hi"></ul>
+    </div>
+
+    <div class="analysis-section example-section">
+      <h3>Example in Action</h3>
+      <p data-field="example-scenario"></p>
+      <p class="text-hi" data-field="example-scenario-hi"></p>
+    </div>
+
+    <div class="result-actions">
+      <a class="btn btn-primary" data-field="pdf-link" href="#">Download PDF Report</a>
+      <a class="btn btn-secondary" href="/history">View History</a>
+      <a class="btn btn-secondary" href="/assessment">Take Assessment Again</a>
+    </div>
+
+    <div class="result-actions admin-only" data-field="admin-actions" style="display:none;">
+      <button class="btn btn-secondary" data-field="edit-btn">Edit Participant Details</button>
+      <button class="btn btn-danger" data-field="delete-btn">Delete This Result</button>
+    </div>
+  </template>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/result.js"></script>
+</body>
+</html>
